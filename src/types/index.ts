@@ -16,7 +16,7 @@ export type FileUploaderProps = {
 
 export type SearchResultProps ={
   isSearchFetching: boolean;
-  searchedPosts: Models.Document[];
+  searchedPosts: Models.DocumentList<Models.Document>;
 }
 
 export type GridPostListProps = {

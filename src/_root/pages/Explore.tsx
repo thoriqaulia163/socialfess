@@ -14,7 +14,6 @@ const Explore = () => {
   
   const debouncedValue = useDebounce(searchValue, 500);
   const { data: searchedPosts, isFetching: isSearchFetching} = useSearchPosts(debouncedValue)
-
   useEffect(()=>{
     if(inView && !searchValue) fetchNextPage();
   },[inView,searchValue])
@@ -68,7 +67,7 @@ const Explore = () => {
         {shouldShowSearchResult ? (
           <SearchResults
             isSearchFetching={isSearchFetching}
-            searchedPosts={searchedPosts}
+            searchedPosts={searchedPosts!}
           />
         ): shouldShowPosts ?(
           <p className='text-light-4 mt-10 text-center w-full'>End of Posts</p>
